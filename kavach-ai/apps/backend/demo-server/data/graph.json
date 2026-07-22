@@ -1,0 +1,19 @@
+{
+  "nodes": [
+    { "id": "COMP-8924", "group": "Complaint", "risk": 85, "size": 140 },
+    { "id": "+91 98765 43210", "group": "Scammer Phone", "risk": 98, "size": 180 },
+    { "id": "scammer@ybl", "group": "VPA / UPI ID", "risk": 95, "size": 160 },
+    { "id": "HDFC-449281", "group": "Mule Bank Account", "risk": 99, "size": 190 },
+    { "id": "IMEI-3549102", "group": "Device IMEI", "risk": 92, "size": 150 },
+    { "id": "COMP-9102", "group": "Complaint", "risk": 80, "size": 130 },
+    { "id": "COMP-9481", "group": "Complaint", "risk": 88, "size": 135 }
+  ],
+  "edges": [
+    { "source": "COMP-8924", "target": "+91 98765 43210", "label": "CALLED_BY" },
+    { "source": "COMP-8924", "target": "scammer@ybl", "label": "TRANSFERRED_TO" },
+    { "source": "+91 98765 43210", "target": "IMEI-3549102", "label": "USED_DEVICE" },
+    { "source": "scammer@ybl", "target": "HDFC-449281", "label": "SETTLED_TO" },
+    { "source": "COMP-9102", "target": "+91 98765 43210", "label": "CALLED_BY" },
+    { "source": "COMP-9481", "target": "HDFC-449281", "label": "TRANSFERRED_TO" }
+  ]
+}

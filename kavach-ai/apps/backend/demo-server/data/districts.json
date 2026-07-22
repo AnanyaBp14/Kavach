@@ -1,0 +1,7 @@
+[
+  { "rank": 1, "district": "Jamtara, JH", "incidents": 342, "threat_level": "Critical", "score": 0.94 },
+  { "rank": 2, "district": "Mewat, HR", "incidents": 289, "threat_level": "Critical", "score": 0.89 },
+  { "rank": 3, "district": "Bharatpur, RJ", "incidents": 156, "threat_level": "High", "score": 0.76 },
+  { "rank": 4, "district": "Bengaluru Urban, KA", "incidents": 98, "threat_level": "Medium", "score": 0.62 },
+  { "rank": 5, "district": "Cyberabad, TS", "incidents": 84, "threat_level": "Medium", "score": 0.58 }
+]
