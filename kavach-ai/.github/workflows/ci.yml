@@ -1,0 +1,46 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    defaults:
+      run:
+        working-directory: apps/backend/api-gateway
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Use Node.js 22.x
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22.x'
+        cache: 'npm'
+        cache-dependency-path: apps/backend/api-gateway/package-lock.json
+        
+    - name: Install Dependencies
+      run: npm install
+      
+    - name: Generate Prisma Client
+      run: npx prisma generate
+      
+    - name: Lint
+      run: npm run lint
+      
+    - name: Type Check
+      run: npx tsc --noEmit
+      
+    # - name: Run Tests
+    #   run: npm test
+      
+    - name: Build
+      run: npm run build
+      
+    - name: Docker Build
+      run: docker build -t kavach-ai-gateway .

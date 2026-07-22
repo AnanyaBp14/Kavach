@@ -1,0 +1,23 @@
+[
+  {
+    "id": "eval_1",
+    "type": "scam",
+    "content": "A person claiming to be from Mumbai Cyber Police called me and said a parcel with my name contains illegal drugs. They demanded a video call on Skype to record my statement.",
+    "expected_category": "DIGITAL_ARREST",
+    "expected_threat": "HIGH"
+  },
+  {
+    "id": "eval_2",
+    "type": "benign",
+    "content": "My internet banking password is not working. Can you please help me reset it? I need to pay my electricity bill.",
+    "expected_category": "BENIGN",
+    "expected_threat": "LOW"
+  },
+  {
+    "id": "eval_3",
+    "type": "phishing",
+    "content": "Dear Customer, your HDFC bank account is suspended due to missing KYC. Click here to update your PAN immediately: http://bit.ly/hdfc-kyc-update",
+    "expected_category": "PHISHING",
+    "expected_threat": "MEDIUM"
+  }
+]

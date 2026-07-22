@@ -1,0 +1,21 @@
+fastapi
+uvicorn
+sqlalchemy
+alembic
+asyncpg
+pydantic
+pydantic-settings
+pydantic-extra-types
+email-validator
+structlog
+aiokafka
+redis
+prometheus-client
+minio
+python-multipart
+# testing
+pytest
+pytest-asyncio
+httpx
+factory_boy
+aiosqlite

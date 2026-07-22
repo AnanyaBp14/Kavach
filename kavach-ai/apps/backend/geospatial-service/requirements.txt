@@ -1,0 +1,21 @@
+fastapi
+uvicorn
+pydantic
+pydantic-settings
+sqlalchemy[asyncio]
+geoalchemy2
+asyncpg
+alembic
+aiokafka
+redis
+scikit-learn
+geopandas
+shapely
+structlog
+prometheus-client
+python-multipart
+# testing
+pytest
+pytest-asyncio
+pytest-mock
+httpx

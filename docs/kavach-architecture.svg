@@ -1,0 +1,201 @@
+<svg viewBox="0 0 1440 980" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Sans, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#5A6B7A"/>
+    </marker>
+    <marker id="arrowAmber" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#E8A33D"/>
+    </marker>
+  </defs>
+
+  <rect width="1440" height="980" fill="#0B1E33"/>
+
+  <!-- Title -->
+  <text x="40" y="46" fill="#F5F7F9" font-size="24" font-weight="700" letter-spacing="0.5">KAVACH — Digital Public Safety Intelligence Grid</text>
+  <text x="40" y="68" fill="#93A2AE" font-size="13">System architecture · reactive complaint handling → predictive threat neutralisation</text>
+
+  <!-- LAYER 1: DATA SOURCES -->
+  <text x="40" y="106" fill="#93A2AE" font-size="12" letter-spacing="2">01 · DATA INGESTION LAYER</text>
+  <g font-size="12.5" fill="#0B1E33">
+    <g>
+      <rect x="40" y="116" width="210" height="52" rx="4" fill="#D9E1E8"/>
+      <text x="55" y="138" font-weight="600">Telecom CDR &amp; Caller-ID</text>
+      <text x="55" y="155" font-size="10.5" fill="#5A6B7A">Call metadata, spoof signatures</text>
+    </g>
+    <g>
+      <rect x="266" y="116" width="210" height="52" rx="4" fill="#D9E1E8"/>
+      <text x="281" y="138" font-weight="600">Bank &amp; UPI Transaction Feeds</text>
+      <text x="281" y="155" font-size="10.5" fill="#5A6B7A">Mule account &amp; transfer patterns</text>
+    </g>
+    <g>
+      <rect x="492" y="116" width="210" height="52" rx="4" fill="#D9E1E8"/>
+      <text x="507" y="138" font-weight="600">Citizen Self-Reports</text>
+      <text x="507" y="155" font-size="10.5" fill="#5A6B7A">WhatsApp · IVR · App · web</text>
+    </g>
+    <g>
+      <rect x="718" y="116" width="210" height="52" rx="4" fill="#D9E1E8"/>
+      <text x="733" y="138" font-weight="600">Currency Images</text>
+      <text x="733" y="155" font-size="10.5" fill="#5A6B7A">ATM · POS · bank counter cams</text>
+    </g>
+    <g>
+      <rect x="944" y="116" width="210" height="52" rx="4" fill="#D9E1E8"/>
+      <text x="959" y="138" font-weight="600">NCRB / FIR Public Feeds</text>
+      <text x="959" y="155" font-size="10.5" fill="#5A6B7A">Cross-agency case records</text>
+    </g>
+    <g>
+      <rect x="1170" y="116" width="230" height="52" rx="4" fill="#D9E1E8"/>
+      <text x="1185" y="138" font-weight="600">Geo-tagged Complaints</text>
+      <text x="1185" y="155" font-size="10.5" fill="#5A6B7A">Seizure &amp; incident coordinates</text>
+    </g>
+  </g>
+
+  <!-- connectors down to orchestrator -->
+  <g stroke="#5A6B7A" stroke-width="1.4" fill="none" marker-end="url(#arrow)" opacity="0.85">
+    <path d="M145,168 L145,200 L700,200 L700,232"/>
+    <path d="M371,168 L371,215 L700,215 L700,232"/>
+    <path d="M597,168 L700,232"/>
+    <path d="M823,168 L750,232"/>
+    <path d="M1049,168 L800,232"/>
+    <path d="M1285,168 L1285,200 L830,200 L830,232"/>
+  </g>
+
+  <!-- LAYER 2: AGENTIC AI CORE -->
+  <text x="40" y="216" fill="#93A2AE" font-size="12" letter-spacing="2">02 · AGENTIC AI CORE</text>
+  <rect x="40" y="232" width="1360" height="200" rx="6" fill="#122A46" stroke="#E8A33D" stroke-width="1" stroke-opacity="0.35"/>
+
+  <!-- orchestrator center -->
+  <rect x="600" y="248" width="240" height="72" rx="4" fill="#E8A33D"/>
+  <text x="720" y="278" text-anchor="middle" font-weight="700" font-size="14" fill="#0B1E33">ORCHESTRATOR AGENT</text>
+  <text x="720" y="296" text-anchor="middle" font-size="10.5" fill="#0B1E33">Fuses signals · builds threat packages</text>
+  <text x="720" y="310" text-anchor="middle" font-size="10.5" fill="#0B1E33">confidence-scored, evidence-chained</text>
+
+  <!-- 5 specialist agents -->
+  <g font-size="12" fill="#F5F7F9">
+    <rect x="60" y="350" width="248" height="66" rx="4" fill="#0B1E33" stroke="#5A6B7A"/>
+    <text x="76" y="372" font-weight="700" fill="#E8A33D">Scam Pattern Agent</text>
+    <text x="76" y="388" font-size="10.5" fill="#93A2AE">NLP / LLM · call &amp; chat script classifier</text>
+    <text x="76" y="402" font-size="10.5" fill="#93A2AE">→ powers Kavach Shield (prototyped)</text>
+
+    <rect x="322" y="350" width="248" height="66" rx="4" fill="#0B1E33" stroke="#5A6B7A"/>
+    <text x="338" y="372" font-weight="700" fill="#E8A33D">Counterfeit Vision Agent</text>
+    <text x="338" y="388" font-size="10.5" fill="#93A2AE">CV · microprint, security thread,</text>
+    <text x="338" y="402" font-size="10.5" fill="#93A2AE">serial pattern, UV simulation</text>
+
+    <rect x="584" y="350" width="248" height="66" rx="4" fill="#0B1E33" stroke="#5A6B7A"/>
+    <text x="600" y="372" font-weight="700" fill="#E8A33D">Graph Intelligence Agent</text>
+    <text x="600" y="388" font-size="10.5" fill="#93A2AE">Links accounts, devices, numbers →</text>
+    <text x="600" y="402" font-size="10.5" fill="#93A2AE">fraud ring &amp; mule network maps</text>
+
+    <rect x="846" y="350" width="248" height="66" rx="4" fill="#0B1E33" stroke="#5A6B7A"/>
+    <text x="862" y="372" font-weight="700" fill="#E8A33D">Geospatial Agent</text>
+    <text x="862" y="388" font-size="10.5" fill="#93A2AE">Clusters complaints + seizures →</text>
+    <text x="862" y="402" font-size="10.5" fill="#93A2AE">hotspots, patrol prioritisation</text>
+
+    <rect x="1108" y="350" width="248" height="66" rx="4" fill="#0B1E33" stroke="#5A6B7A"/>
+    <text x="1124" y="372" font-weight="700" fill="#E8A33D">Voice Spoof Agent</text>
+    <text x="1124" y="388" font-size="10.5" fill="#93A2AE">Speech AI · AI-voice &amp; deepfake</text>
+    <text x="1124" y="402" font-size="10.5" fill="#93A2AE">detection on call audio</text>
+  </g>
+
+  <!-- lines orchestrator to agents -->
+  <g stroke="#E8A33D" stroke-width="1.2" fill="none" opacity="0.6">
+    <path d="M660,320 L184,350"/>
+    <path d="M690,320 L446,350"/>
+    <path d="M720,320 L708,350"/>
+    <path d="M760,320 L970,350"/>
+    <path d="M800,320 L1232,350"/>
+  </g>
+
+  <!-- connectors down to integration layer -->
+  <g stroke="#5A6B7A" stroke-width="1.4" fill="none" marker-end="url(#arrow)" opacity="0.85">
+    <path d="M720,432 L720,460"/>
+  </g>
+
+  <!-- LAYER 3: INTEGRATION & ALERTING -->
+  <text x="40" y="480" fill="#93A2AE" font-size="12" letter-spacing="2">03 · INTEGRATION &amp; ALERTING LAYER</text>
+  <g font-size="12" fill="#0B1E33">
+    <rect x="40" y="494" width="260" height="58" rx="4" fill="#9FD6C4"/>
+    <text x="55" y="518" font-weight="700">MHA Cyber Alert Queue</text>
+    <text x="55" y="535" font-size="10.5" fill="#12433A">Auto-generated threat notices</text>
+
+    <rect x="320" y="494" width="260" height="58" rx="4" fill="#9FD6C4"/>
+    <text x="335" y="518" font-weight="700">NCRB / 1930 Portal Bridge</text>
+    <text x="335" y="535" font-size="10.5" fill="#12433A">Pre-filled complaint drafts</text>
+
+    <rect x="600" y="494" width="260" height="58" rx="4" fill="#9FD6C4"/>
+    <text x="615" y="518" font-weight="700">Telecom Flag API</text>
+    <text x="615" y="535" font-size="10.5" fill="#12433A">Caller-ID risk tag, number block</text>
+
+    <rect x="880" y="494" width="260" height="58" rx="4" fill="#9FD6C4"/>
+    <text x="895" y="518" font-weight="700">Bank / ATM Teller Interface</text>
+    <text x="895" y="535" font-size="10.5" fill="#12433A">Instant counterfeit verdicts</text>
+
+    <rect x="1160" y="494" width="240" height="58" rx="4" fill="#9FD6C4"/>
+    <text x="1175" y="518" font-weight="700">LEA Command Centre</text>
+    <text x="1175" y="535" font-size="10.5" fill="#12433A">Live hotspot &amp; case dashboard</text>
+  </g>
+
+  <!-- connectors down to citizen layer -->
+  <g stroke="#5A6B7A" stroke-width="1.4" fill="none" marker-end="url(#arrow)" opacity="0.85">
+    <path d="M170,552 L170,580"/>
+    <path d="M450,552 L450,580"/>
+  </g>
+
+  <!-- LAYER 4: CITIZEN FACING -->
+  <text x="40" y="600" fill="#93A2AE" font-size="12" letter-spacing="2">04 · CITIZEN-FACING LAYER</text>
+  <g>
+    <rect x="40" y="614" width="330" height="70" rx="4" fill="#0B1E33" stroke="#E8A33D" stroke-width="2"/>
+    <text x="56" y="638" font-weight="700" font-size="13" fill="#E8A33D">Kavach Shield — Web/App</text>
+    <text x="56" y="655" font-size="10.5" fill="#93A2AE">Real-time scam risk verdict + guided</text>
+    <text x="56" y="669" font-size="10.5" fill="#93A2AE">1930/NCRB reporting · PROTOTYPED</text>
+
+    <rect x="396" y="614" width="260" height="70" rx="4" fill="#122A46" stroke="#5A6B7A"/>
+    <text x="412" y="638" font-weight="700" font-size="13" fill="#F5F7F9">WhatsApp Bot</text>
+    <text x="412" y="655" font-size="10.5" fill="#93A2AE">Same classifier, chat-native,</text>
+    <text x="412" y="669" font-size="10.5" fill="#93A2AE">12 regional languages</text>
+
+    <rect x="682" y="614" width="260" height="70" rx="4" fill="#122A46" stroke="#5A6B7A"/>
+    <text x="698" y="638" font-weight="700" font-size="13" fill="#F5F7F9">IVR / Voice Line</text>
+    <text x="698" y="655" font-size="10.5" fill="#93A2AE">Feature-phone accessible,</text>
+    <text x="698" y="669" font-size="10.5" fill="#93A2AE">dial-in risk check</text>
+  </g>
+
+  <!-- LAYER 5: GOVERNANCE (right vertical strip) -->
+  <rect x="1000" y="590" width="400" height="330" rx="6" fill="#122A46" stroke="#5A6B7A" stroke-opacity="0.5"/>
+  <text x="1020" y="618" fill="#93A2AE" font-size="12" letter-spacing="2">05 · GOVERNANCE &amp; AUDIT LAYER</text>
+  <g font-size="12" fill="#F5F7F9">
+    <text x="1020" y="648" font-weight="700" fill="#9FD6C4">Evidence Hash-Chain</text>
+    <text x="1020" y="665" font-size="10.5" fill="#93A2AE">Immutable timestamped logs for</text>
+    <text x="1020" y="679" font-size="10.5" fill="#93A2AE">court-admissible intelligence packages</text>
+
+    <text x="1020" y="712" font-weight="700" fill="#9FD6C4">Jurisdictional Access Control</text>
+    <text x="1020" y="729" font-size="10.5" fill="#93A2AE">Role &amp; agency-scoped data access</text>
+    <text x="1020" y="743" font-size="10.5" fill="#93A2AE">across state/district boundaries</text>
+
+    <text x="1020" y="776" font-weight="700" fill="#9FD6C4">Privacy &amp; Consent Layer</text>
+    <text x="1020" y="793" font-size="10.5" fill="#93A2AE">PII minimisation, DPDP Act-aligned</text>
+    <text x="1020" y="807" font-size="10.5" fill="#93A2AE">consent logging for citizen submissions</text>
+
+    <text x="1020" y="840" font-weight="700" fill="#9FD6C4">Model Audit Trail</text>
+    <text x="1020" y="857" font-size="10.5" fill="#93A2AE">Versioned classifier decisions,</text>
+    <text x="1020" y="871" font-size="10.5" fill="#93A2AE">explainability logs for legal review</text>
+  </g>
+
+  <!-- Feedback loop: confirmed cases route back to retrain the AI core, routed around the governance panel -->
+  <g stroke="#E8A33D" stroke-width="1.2" stroke-dasharray="4 3" fill="none" marker-end="url(#arrowAmber)" opacity="0.75">
+    <path d="M1290,552 L1425,552 L1425,955 L60,955 L60,168"/>
+  </g>
+  <text x="742" y="972" text-anchor="middle" fill="#E8A33D" font-size="11" letter-spacing="0.5">FEEDBACK LOOP — confirmed cases retrain classifiers · new hotspots re-prioritise patrols</text>
+
+  <!-- legend -->
+  <g font-size="11" fill="#93A2AE">
+    <rect x="1030" y="60" width="12" height="12" fill="#D9E1E8"/>
+    <text x="1048" y="70">Ingestion source</text>
+    <rect x="1150" y="60" width="12" height="12" fill="#E8A33D"/>
+    <text x="1168" y="70">AI agent</text>
+    <rect x="1030" y="82" width="12" height="12" fill="#9FD6C4"/>
+    <text x="1048" y="92">Integration endpoint</text>
+    <rect x="1150" y="82" width="12" height="12" fill="none" stroke="#E8A33D" stroke-width="2"/>
+    <text x="1168" y="92">Prototyped module</text>
+  </g>
+</svg>

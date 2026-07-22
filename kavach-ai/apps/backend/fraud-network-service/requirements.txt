@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+pydantic
+pydantic-settings
+neo4j
+aiokafka
+structlog
+prometheus-client
+python-multipart
+# testing
+pytest
+pytest-asyncio
+pytest-mock
+httpx

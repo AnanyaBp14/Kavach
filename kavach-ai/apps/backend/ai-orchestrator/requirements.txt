@@ -1,0 +1,21 @@
+fastapi
+uvicorn
+pydantic
+pydantic-settings
+langgraph
+langchain
+langchain-groq
+opencv-python-headless
+easyocr
+sentence-transformers
+neo4j
+redis
+aiokafka
+structlog
+prometheus-client
+python-multipart
+# testing
+pytest
+pytest-asyncio
+pytest-mock
+httpx

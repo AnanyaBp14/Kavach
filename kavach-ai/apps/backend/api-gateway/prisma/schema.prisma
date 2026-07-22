@@ -1,0 +1,142 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  CITIZEN
+  POLICE
+  BANK
+  TELECOM
+  ADMIN
+  SUPER_ADMIN
+}
+
+enum OrgType {
+  POLICE
+  BANK
+  TELECOM
+  RBI
+  CYBER_CRIME
+  CITIZEN
+}
+
+enum Status {
+  ACTIVE
+  INACTIVE
+  SUSPENDED
+}
+
+model Organization {
+  id        String   @id @default(uuid())
+  name      String
+  type      OrgType
+  address   String?
+  district  String?
+  state     String?
+  createdAt DateTime @default(now())
+  users     User[]
+}
+
+model Permission {
+  id          String           @id @default(uuid())
+  action      String           @unique // e.g., VIEW_CASE, EDIT_CASE, BLOCK_SIM
+  description String?
+  roles       RolePermission[]
+  users       UserPermission[]
+}
+
+model RolePermission {
+  id           String     @id @default(uuid())
+  role         Role
+  permissionId String
+  permission   Permission @relation(fields: [permissionId], references: [id])
+}
+
+model UserPermission {
+  id           String     @id @default(uuid())
+  userId       String
+  permissionId String
+  user         User       @relation(fields: [userId], references: [id])
+  permission   Permission @relation(fields: [permissionId], references: [id])
+}
+
+model User {
+  id                   String           @id @default(uuid())
+  name                 String
+  email                String           @unique
+  phone                String?          @unique
+  password             String
+  role                 Role             @default(CITIZEN)
+  organizationId       String?
+  organization         Organization?    @relation(fields: [organizationId], references: [id])
+  avatar               String?
+  language             String?
+  department           String?
+  designation          String?
+  status               Status           @default(ACTIVE)
+  
+  // Security & Verification
+  failedLoginAttempts  Int              @default(0)
+  lockedUntil          DateTime?
+  isVerified           Boolean          @default(false)
+  emailVerifiedAt      DateTime?
+  phoneVerified        Boolean          @default(false)
+  mfaEnabled           Boolean          @default(false)
+  refreshTokenVersion  Int              @default(0)
+  
+  // Timestamps
+  createdAt            DateTime         @default(now())
+  updatedAt            DateTime         @updatedAt
+  lastLogin            DateTime?
+  
+  // Relations
+  auditLogs            AuditLog[]
+  userPermissions      UserPermission[]
+  refreshTokens        RefreshToken[]
+  devices              UserDevice[]
+}
+
+model RefreshToken {
+  id        String   @id @default(uuid())
+  userId    String
+  deviceId  String?
+  expiresAt DateTime
+  revoked   Boolean  @default(false)
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model UserDevice {
+  id               String   @id @default(uuid())
+  userId           String
+  browser          String?
+  os               String?
+  ip               String?
+  country          String?
+  deviceFingerprint String?
+  lastActive       DateTime @default(now())
+  user             User     @relation(fields: [userId], references: [id])
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  userId    String?
+  resource  String?  // e.g., 'User', 'Case', 'Evidence'
+  action    String
+  oldValue  Json?
+  newValue  Json?
+  status    String   // 'SUCCESS' | 'FAILURE'
+  requestId String?
+  latency   Int?
+  endpoint  String?
+  method    String?
+  ipAddress String?
+  userAgent String?
+  createdAt DateTime @default(now())
+  user      User?    @relation(fields: [userId], references: [id])
+}
